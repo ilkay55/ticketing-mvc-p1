@@ -1,13 +1,12 @@
 package com.ilkay.dto;
 
-import com.ilkay.entity.Role;
+
 import com.ilkay.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class UserDTO {
     private String firstName;
@@ -16,6 +15,6 @@ public class UserDTO {
     private String passWord;
     private boolean enabled;
     private String phone;
-    private Role role;
+    private RoleDTO role;
     private Gender gender;
 }

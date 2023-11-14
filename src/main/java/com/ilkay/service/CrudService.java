@@ -5,16 +5,18 @@ import java.util.List;
 public interface CrudService<T, ID> {
 
     //save, findByID, delete, findAll
-    
+
     T save(T object);
 
     List<T> findAll();
 
     T findById(ID id);
 
-    void delete(T object);
+//    void delete(T object);  // removed because i do not need a delete method for the moment
 
     void deleteById(ID id);
+
+    void update(T object);
 
 }
 //
