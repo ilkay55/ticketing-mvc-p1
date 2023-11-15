@@ -1,14 +1,14 @@
 package com.ilkay.service.impl;
 
+
 import com.ilkay.dto.RoleDTO;
 import com.ilkay.service.RoleService;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class RoleServiceImpl extends AbstractMapService<RoleDTO, Long> implements RoleService {
+public class RoleServiceImpl extends AbstractMapService<RoleDTO,Long> implements RoleService {
 
 
     @Override
@@ -31,10 +31,15 @@ public class RoleServiceImpl extends AbstractMapService<RoleDTO, Long> implement
         super.update(object.getId(), object);
     }
 
-
     @Override
-    public RoleDTO findById(Long id) { return super.findById(id);
+    public RoleDTO findById(Long id) {
+        return super.findById(id);
     }
 
-
 }
+
+
+
+
+
+
