@@ -1,6 +1,7 @@
 package com.ilkay.service.impl;
 
 import com.ilkay.dto.ProjectDTO;
+import com.ilkay.enums.Status;
 import com.ilkay.service.ProjectService;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,11 @@ public class ProjectServiceImpl extends AbstractMapService<ProjectDTO,String> im
 
     @Override
     public ProjectDTO save(ProjectDTO object) {
+        if(object.getProjectStatus()==null)
+        {
+            object.setProjectStatus(Status.OPEN);
+        }
+
         return super.save(object.getProjectCode(),object);
     }
 
@@ -33,6 +39,13 @@ public class ProjectServiceImpl extends AbstractMapService<ProjectDTO,String> im
     @Override
     public ProjectDTO findById(String id) {
         return super.findById(id);
+    }
+
+    @Override
+    public void complete(ProjectDTO project) {
+        project.setProjectStatus(Status.COMPLETE);
+        super.save(project.getProjectCode(), project);
+
     }
 }
 
