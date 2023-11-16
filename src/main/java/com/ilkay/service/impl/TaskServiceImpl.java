@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class TaskServiceImpl extends AbstractMapService<TaskDTO, Long> implements TaskService {
-
     @Override
     public TaskDTO save(TaskDTO object) {
 
@@ -80,5 +79,6 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO, Long> implement
         findById(task.getId()).setTaskStatus(task.getTaskStatus());
         update(task);
     }
+
 
 }
